@@ -8,7 +8,7 @@ interface StatCardProps {
   isNegative?: boolean;
 }
 
-function StatCard({ title, value, subtitle, progress, isNegative }) => (
+function StatCard({ title, value, subtitle, progress, isNegative }: StatCardProps) => (
   <Paper elevation={1} sx={{ p: 3, textAlign: 'left', height: '100%' }}>
     <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 500, textTransform: 'uppercase' }}>
       {title}
