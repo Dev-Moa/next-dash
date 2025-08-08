@@ -99,7 +99,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
     orderBy,
     numSelected,
     rowCount,
-    onRequestSort
+    onRequestSort,
   } = props;
 
   const createSortHandler =
@@ -290,13 +290,15 @@ const OrdersPage = () => {
 
   const { data, isLoading } = useGetOrdersQuery();
   const ordersData: OrderType[] = data ?? [];
+
   const filteredOrders = React.useMemo(() => {
     if (!filterText) return ordersData;
+    const searchTerm = filterText.toLowerCase();
     return ordersData.filter(
       (order) =>
-        order.product_id.toString().includes(filterText.toLowerCase()) ||
-        order.name.toString().includes(filterText.toLowerCase()) ||
-        order.price.toString().includes(filterText.toLowerCase())
+        order.product_id.toString().toLowerCase().includes(searchTerm) ||
+        order.name.toLowerCase().includes(searchTerm) || // Fixed line
+        order.price.toString().toLowerCase().includes(searchTerm)
     );
   }, [ordersData, filterText]);
 
