@@ -1,5 +1,5 @@
 import { Box, Drawer } from "@mui/material";
-import DynamicContent from "./DynamicContent";
+import DynamicContent from "./SidebarContent";
 
 
 interface SidebarProps {
