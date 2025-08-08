@@ -19,7 +19,7 @@ interface SidebarProps {
   onDrawerClose?: () => void;
 }
 
-function DynamicContent({
+function SidebarContent({
   onDrawerClose,
 }: SidebarProps) {
   const router = useRouter();
@@ -91,4 +91,4 @@ function DynamicContent({
   );
 }
 
-export default DynamicContent;
+export default SidebarContent;

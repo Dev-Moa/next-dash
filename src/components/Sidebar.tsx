@@ -1,5 +1,5 @@
 import { Box, Drawer } from "@mui/material";
-import DynamicContent from "./SidebarContent";
+import SidebarContent from "./SidebarContent";
 
 
 interface SidebarProps {
@@ -41,7 +41,7 @@ function Sidebar({
           },
         }}
       >
-        <DynamicContent onDrawerClose={onDrawerClose}/>
+        <SidebarContent onDrawerClose={onDrawerClose}/>
       </Drawer>
       <Drawer
         variant="permanent"
@@ -56,7 +56,7 @@ function Sidebar({
         }}
         open
       >
-        <DynamicContent onDrawerClose={onDrawerClose} />
+        <SidebarContent onDrawerClose={onDrawerClose} />
       </Drawer>
     </Box>
   );
